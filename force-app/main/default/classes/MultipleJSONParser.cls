@@ -7,7 +7,7 @@
  * @Inputs:
  		* @InputParam: (Mandatory) JSON String to Parse ==> Text Variable or Text Template in JSON Format
         * @InputParam: (Mandatory) Ignore Error? ==> Boolean whether you want the flow to fail if parsing fail or not
-         								   			[Error Catched] :  <error.text> if failed and Set to True
+         								   			[Error] :  <error.text> if failed and Set to True
         * @InputParam: Field<number> ==> specify where you want to get the value from
          	@example: JSON = {"id": "0001",
 							  "type": "donut",
@@ -68,7 +68,7 @@ public class MultipleJSONParser {
                 result = mapParser(fieldName, jsonToParse);
             }
             catch(exception e){
-                result = '[Error catched] : '+ e.getMessage();}
+                result = '[Error] : '+ e.getMessage();}
         }
         else if (fieldName != null && ignore_error == False){
             result = mapParser(fieldName, jsonToParse);
@@ -134,7 +134,7 @@ public class MultipleJSONParser {
                            description='JSON String to Parse (can be Text Template formatted to JSON)')
         public String jsonStringToParse;
         @InvocableVariable(label='Ignore Error?' required=True
-                          description='If you select True, will return [Error catched] : <error text>')
+                          description='If you select True, will return [Error] : <error text>')
         public Boolean ignore_error;
         @InvocableVariable(label='Field01')
         public String fieldName1;
