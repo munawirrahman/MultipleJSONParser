@@ -37,6 +37,6 @@ private class MultipleJSONParserTest {
         System.assertEquals(null, listResult[0].Value08);
         System.assertEquals('{"type":"Regular","id":"1001"}', listResult[0].Value09);
         System.assertEquals('[{"type":"Regular","id":"1001"},{"type":"Chocolate","id":"1002"},{"type":"Blueberry","id":"1003"},{"type":"Devils Food","id":"1004"}]', listResult[0].Value10);
-        System.assertEquals('[Error catched] : List index out of bounds: 10', listResult[0].Value11);
+        System.assertEquals('[Error] : List index out of bounds: 10', listResult[0].Value11);
     }
 }
